@@ -74,7 +74,7 @@ project(':grpc-xds').projectDir = "$rootDir/xds" as File
 project(':grpc-bom').projectDir = "$rootDir/bom" as File
 project(':grpc-rls').projectDir = "$rootDir/rls" as File
 
-if (settings.hasProperty('skipCodegen') && skipCodegen.toBoolean()) {
+/*if (settings.hasProperty('skipCodegen') && skipCodegen.toBoolean()) {
     println '*** Skipping the build of codegen and compilation of proto files because skipCodegen=true'
 } else {
     include ":grpc-compiler"
@@ -91,4 +91,7 @@ if (settings.hasProperty('skipAndroid') && skipAndroid.toBoolean()) {
     project(':grpc-android').projectDir = "$rootDir/android" as File
     include ":grpc-android-interop-testing"
     project(':grpc-android-interop-testing').projectDir = "$rootDir/android-interop-testing" as File
-}
+}*/
+
+include 'example'
+
