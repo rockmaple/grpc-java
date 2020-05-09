@@ -20,6 +20,8 @@ dependencies {
     // examples/advanced need this for JsonFormat
     implementation "com.google.protobuf:protobuf-java-util:${protobufVersion}"
 
+    implementation 'com.google.cloud:google-cloud-logging-logback:0.117.0-alpha'
+
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
     runtimeOnly project(':grpc-netty')
