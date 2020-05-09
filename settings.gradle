@@ -65,7 +65,9 @@ project(':grpc-grpclb').projectDir = "$rootDir/grpclb" as File
 project(':grpc-testing').projectDir = "$rootDir/testing" as File
 project(':grpc-testing-proto').projectDir = "$rootDir/testing-proto" as File
 project(':grpc-interop-testing').projectDir = "$rootDir/interop-testing" as File
+/*
 project(':grpc-gae-interop-testing-jdk8').projectDir = "$rootDir/gae-interop-testing/gae-jdk8" as File
+*/
 project(':grpc-all').projectDir = "$rootDir/all" as File
 project(':grpc-alts').projectDir = "$rootDir/alts" as File
 project(':grpc-benchmarks').projectDir = "$rootDir/benchmarks" as File
