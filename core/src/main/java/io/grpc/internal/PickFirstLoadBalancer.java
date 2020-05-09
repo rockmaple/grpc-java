@@ -29,6 +29,7 @@ import io.grpc.LoadBalancer;
 import io.grpc.Status;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Logger;
 
 /**
  * A {@link LoadBalancer} that provides no load-balancing over the addresses from the {@link
@@ -36,6 +37,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * list and sticking to the first that works.
  */
 final class PickFirstLoadBalancer extends LoadBalancer {
+
   private final Helper helper;
   private Subchannel subchannel;
 
@@ -126,6 +128,9 @@ final class PickFirstLoadBalancer extends LoadBalancer {
    * received in constructor.
    */
   private static final class Picker extends SubchannelPicker {
+
+    Logger logger = Logger.getLogger("PickFirstLBPicker");
+
     private final PickResult result;
 
     Picker(PickResult result) {
@@ -134,6 +139,7 @@ final class PickFirstLoadBalancer extends LoadBalancer {
 
     @Override
     public PickResult pickSubchannel(PickSubchannelArgs args) {
+      logger.info("pick sub channel");
       return result;
     }
 
