@@ -23,8 +23,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.ServiceConfigurationError;
 import java.util.ServiceLoader;
+import java.util.logging.Logger;
 
 final class ServiceProviders {
+
+  private static final Logger logger = Logger.getLogger(ServiceProviders.class.getName());
+
   private ServiceProviders() {
     // do not instantiate
   }
@@ -57,6 +61,9 @@ final class ServiceProviders {
       Iterable<Class<?>> hardcoded,
       ClassLoader cl,
       final PriorityAccessor<T> priorityAccessor) {
+
+    logger.info("loadAll kclass: " + klass);
+
     Iterable<T> candidates;
     if (isAndroid(cl)) {
       candidates = getCandidatesViaHardCoded(klass, hardcoded);

@@ -34,6 +34,7 @@ public abstract class ManagedChannelProvider {
   @VisibleForTesting
   static final Iterable<Class<?>> HARDCODED_CLASSES = new HardcodedClasses();
 
+  //这里获取到Netty实现
   private static final ManagedChannelProvider provider = ServiceProviders.load(
       ManagedChannelProvider.class,
       HARDCODED_CLASSES,
